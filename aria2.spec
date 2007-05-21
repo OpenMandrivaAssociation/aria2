@@ -1,5 +1,5 @@
 %define name	aria2
-%define version	0.10.1
+%define version	0.10.2+1
 %define release	%mkrel 1
 %define group	Networking/File transfer
 
