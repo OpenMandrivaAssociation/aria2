@@ -1,23 +1,13 @@
-%define name	aria2
-%define version	0.10.2+1
-%define release	%mkrel 1
-%define group	Networking/File transfer
-
-%define	section	Internet/File Transfer
-%define	title	Aria2 is a download utility with resuming and segmented downloading
-
-%define Summary	Aria2 is a download utility with resuming and segmented downloading
-
-Summary: 	%{Summary}
-Name: 		%{name}
-Version: 	%{version}
-Release:	%{release}
+Summary: 	Aria2 is a download utility with resuming and segmented downloading
+Name: 		aria2
+Version: 	0.11.2
+Release:	%mkrel 1
 License: 	GPL
-Group: 		%{group}
-Source: 	%{name}-%{version}.tar.bz2
+Group: 		Networking/File transfer
+Source: 	http://nchc.dl.sourceforge.net/sourceforge/aria2/%{name}-%{version}.tar.bz2
 URL: 		http://aria2.sourceforge.net/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Buildrequires:  %{mklibname xml2}-devel
+Buildrequires:  libxml2-devel
 
 %description
 Aria2 has segmented downloading engine in its core. It can download one 
@@ -49,6 +39,4 @@ rm -fr %{buildroot}
 %defattr(-, root, root)
 %doc ChangeLog INSTALL README TODO 
 %{_bindir}/*
-%{_prefix}/share/*
-
-
+%{_datadir}/*
