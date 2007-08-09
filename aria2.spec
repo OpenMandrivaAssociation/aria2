@@ -30,13 +30,13 @@ It also supports Metalink version 3.0.
 rm -rf %{buildroot}
 %makeinstall_std
 
-%find_lang %{name}
+%find_lang aria2c
 
 %clean
 rm -fr %{buildroot}
 
-%files -f %{name}.lang
+%files -f aria2c.lang
 %defattr(-, root, root)
 %doc ChangeLog INSTALL README TODO 
 %{_bindir}/*
-%{_datadir}/*
+%{_mandir}/man1/*
