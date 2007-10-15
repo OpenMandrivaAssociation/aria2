@@ -1,7 +1,7 @@
 Summary: 	Aria2 is a download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	0.11.2
-Release:	%mkrel 3
+Version: 	0.11.3
+Release:	%mkrel 1
 License: 	GPL
 Group: 		Networking/File transfer
 Source: 	http://nchc.dl.sourceforge.net/sourceforge/aria2/%{name}-%{version}.tar.bz2
@@ -23,7 +23,6 @@ It also supports Metalink version 3.0.
 
 %build
 %configure2_5x --without-gnutls
-
 %make 
 
 %install
