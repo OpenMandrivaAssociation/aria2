@@ -1,4 +1,4 @@
-Summary: 	Aria2 is a download utility with resuming and segmented downloading
+Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
 Version: 	0.11.4
 Release:	%mkrel 2
