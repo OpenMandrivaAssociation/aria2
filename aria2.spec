@@ -17,7 +17,7 @@ This engine is implemented with a single-thread model.
 It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %configure2_5x --without-gnutls
@@ -30,10 +30,10 @@ rm -rf %{buildroot}
 %find_lang aria2c
 
 %clean
-rm -fr %{buildroot}
+rm -rf %{buildroot}
 
 %files -f aria2c.lang
 %defattr(-, root, root)
-%doc ChangeLog INSTALL README TODO 
+%doc ChangeLog README TODO 
 %{_bindir}/*
 %{_mandir}/man1/*
