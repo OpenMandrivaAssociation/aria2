@@ -8,7 +8,8 @@ Group: 		Networking/File transfer
 Source: 	http://nchc.dl.sourceforge.net/sourceforge/aria2/%{name}-%{version}-%{cvs}.tar.lzma
 URL: 		http://aria2.sourceforge.net/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Buildrequires:  libxml2-devel openssl-devel c-ares-devel cppunit-devel
+Buildrequires:  libxml2-devel openssl-devel c-ares-devel
+BuildRequires:	libgcrypt-devel gnutls-devel cppunit-devel
 
 %description
 Aria2 has segmented downloading engine in its core. It can download one 
