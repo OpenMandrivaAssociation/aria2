@@ -27,6 +27,8 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 rm -rf %{buildroot}
 %makeinstall_std
 
+rm -f %{buildroot}%{_datadir}/locale/locale.alias
+
 %find_lang aria2c
 
 %clean
