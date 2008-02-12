@@ -1,6 +1,6 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	0.12.0
+Version: 	0.12.1
 Release:	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/File transfer
@@ -8,6 +8,8 @@ Source0: 	http://nchc.dl.sourceforge.net/sourceforge/aria2/%{name}-%{version}.ta
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel openssl-devel c-ares-devel
 BuildRequires:	libgcrypt-devel gnutls-devel cppunit-devel
+BuildRoot:      %{_tmppath}/%{name}-buildroot
+
 
 %description
 Aria2 has segmented downloading engine in its core. It can download one 
