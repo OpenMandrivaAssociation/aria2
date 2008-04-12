@@ -1,16 +1,14 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	0.12.1
-Release:	%mkrel 2
+Version: 	0.13.1+1
+Release:	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/File transfer
-Source0: 	http://nchc.dl.sourceforge.net/sourceforge/aria2/%{name}-%{version}.tar.bz2
-Patch0:		aria2-0.12.1-metalink-enable-unique-protocol.patch
+Source0: 	http://nchc.dl.sourceforge.net/sourceforge/aria2/%{name}c-%{version}.tar.bz2
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel openssl-devel c-ares-devel
 BuildRequires:	libgcrypt-devel gnutls-devel cppunit-devel
 BuildRoot:      %{_tmppath}/%{name}-buildroot
-
 
 %description
 Aria2 has segmented downloading engine in its core. It can download one 
@@ -20,8 +18,7 @@ This engine is implemented with a single-thread model.
 It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
-%setup -q
-%patch0 -p1 -b .unique
+%setup -q -n%{name}c-%version
 
 %build
 %configure2_5x --without-gnutls
@@ -32,6 +29,7 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 rm -f %{buildroot}%{_datadir}/locale/locale.alias
+rm -fr %{buildroot}%{_datadir}/doc
 
 %find_lang aria2c
 
@@ -40,6 +38,6 @@ rm -rf %{buildroot}
 
 %files -f aria2c.lang
 %defattr(-, root, root)
-%doc ChangeLog README TODO 
+%doc ChangeLog README* TODO *.html
 %{_bindir}/*
 %{_mandir}/man1/*
