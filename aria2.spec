@@ -1,10 +1,11 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	0.15.2
-Release:	%mkrel 1
+Version: 	0.15.3
+Release:	%mkrel 0.20080902.1
 License: 	GPLv2+
 Group: 		Networking/File transfer
-Source0: 	http://nchc.dl.sourceforge.net/sourceforge/aria2/%{name}c-%{version}.tar.bz2
+Source0: 	aria2c-r685.tar.lzma
+Patch0:		aria2c-AdaptiveURISelector.patch
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel openssl-devel c-ares-devel
 BuildRequires:	libgcrypt-devel gnutls-devel cppunit-devel
@@ -18,7 +19,8 @@ This engine is implemented with a single-thread model.
 It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
-%setup -q -n%{name}c-%version
+%setup -q -n%{name}c
+%patch0
 
 %build
 %configure2_5x --without-gnutls
