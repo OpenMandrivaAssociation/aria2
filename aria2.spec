@@ -1,10 +1,10 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
 Version: 	0.15.3
-Release:	%mkrel 0.20080902.2
+Release:	%mkrel 0.20080918.1
 License: 	GPLv2+
 Group: 		Networking/File transfer
-Source0: 	aria2c-r685.tar.lzma
+Source0: 	aria2c-r729.tar.lzma
 Patch0:		aria2c-AdaptiveURISelector.patch
 Patch1:		aria2c-fix-build-on-x86_64.patch
 URL: 		http://aria2.sourceforge.net/
@@ -22,7 +22,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 %prep
 %setup -q -n%{name}c
 %patch0
-%patch1 -p1
+%patch1
 
 %build
 %configure2_5x --without-gnutls
