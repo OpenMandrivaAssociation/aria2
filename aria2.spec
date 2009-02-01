@@ -1,17 +1,15 @@
+%define snapdate 20090201
+
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	0.15.3
-Release:	%mkrel 0.20080918.3
+Version: 	1.2.0
+Release:	%mkrel 0.20090201.1
 License: 	GPLv2+
 Group: 		Networking/File transfer
-Source0: 	aria2c-r729.tar.lzma
-Patch0:		aria2c-AdaptiveURISelector.patch
-Patch1:		aria2c-fix-build-on-x86_64.patch
-Patch2:		aria2c-implement-exit-status.patch
-Patch3:		aria2c-AdaptiveURISelector-adaptive-timeout.patch
+Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}b+%{snapdate}.tar.bz2
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel openssl-devel c-ares-devel
-BuildRequires:	libgcrypt-devel gnutls-devel cppunit-devel
+BuildRequires:	sqlite3-devel
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 
 %description
@@ -22,11 +20,7 @@ This engine is implemented with a single-thread model.
 It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
-%setup -q -n%{name}c
-%patch0 -b .adaptive
-%patch1
-%patch2 -p1 -b .exit-status
-%patch3 -p1 -b .uris-timeout
+%setup -q -n%{name}-%{version}b+%{snapdate}
 
 %build
 %configure2_5x --without-gnutls
@@ -39,13 +33,13 @@ rm -rf %{buildroot}
 rm -f %{buildroot}%{_datadir}/locale/locale.alias
 rm -fr %{buildroot}%{_datadir}/doc
 
-%find_lang aria2c
+%find_lang aria2
 
 %clean
 rm -rf %{buildroot}
 
-%files -f aria2c.lang
+%files -f aria2.lang
 %defattr(-, root, root)
-%doc ChangeLog README* TODO *.html
+%doc ChangeLog README* *.html
 %{_bindir}/*
 %{_mandir}/man1/*
