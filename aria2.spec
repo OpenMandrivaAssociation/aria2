@@ -9,7 +9,7 @@ Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}b+%{snapdate}.tar.bz2
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel openssl-devel c-ares-devel
-BuildRequires:	sqlite3-devel
+BuildRequires:	sqlite3-devel cppunit-devel
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 
 %description
@@ -34,6 +34,9 @@ rm -f %{buildroot}%{_datadir}/locale/locale.alias
 rm -fr %{buildroot}%{_datadir}/doc
 
 %find_lang aria2
+
+%check
+%make check
 
 %clean
 rm -rf %{buildroot}
