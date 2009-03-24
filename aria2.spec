@@ -7,6 +7,7 @@ Release:	%mkrel 0.20090201.1
 License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}b+%{snapdate}.tar.bz2
+Patch0:		aria2c-fix-retrieve-failed.patch
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel openssl-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
@@ -21,6 +22,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q -n%{name}-%{version}b+%{snapdate}
+%patch0 -p1
 
 %build
 %configure2_5x --without-gnutls
