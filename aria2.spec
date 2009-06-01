@@ -1,13 +1,10 @@
-%define snapdate 20090201
-
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	1.2.0
-Release:	%mkrel 0.20090201.2
+Version: 	1.4.0
+Release:	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/File transfer
-Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}b+%{snapdate}.tar.bz2
-Patch0:		aria2c-fix-retrieve-failed.patch
+Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.bz2
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel openssl-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
@@ -21,8 +18,7 @@ This engine is implemented with a single-thread model.
 It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
-%setup -q -n%{name}-%{version}b+%{snapdate}
-%patch0 -p1
+%setup -q -n%{name}-%{version}
 
 %build
 %configure2_5x --without-gnutls
