@@ -6,7 +6,7 @@ License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.bz2
 URL: 		http://aria2.sourceforge.net/
-Buildrequires:  libxml2-devel openssl-devel c-ares-devel
+Buildrequires:  libxml2-devel gnutls-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 
@@ -21,7 +21,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 %setup -q -n%{name}-%{version}
 
 %build
-%configure2_5x --without-gnutls
+%configure2_5x
 %make 
 
 %install
