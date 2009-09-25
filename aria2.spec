@@ -22,7 +22,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 %setup -q -n%{name}-%{version}
 
 %build
-%configure2_5x --with-ca-bundle="/etc/ssl/certs/ca-certificates.crt"
+%configure2_5x --with-ca-bundle="/etc/pki/tls/cert.pem"
 %make 
 
 %install
