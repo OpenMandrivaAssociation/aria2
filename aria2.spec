@@ -1,6 +1,6 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	1.7.1
+Version: 	1.7.2
 Release:	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/File transfer
