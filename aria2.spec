@@ -1,10 +1,12 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
 Version: 	1.8.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.xz
+# http://sourceforge.net/tracker/?func=detail&aid=2938753&group_id=159897&atid=813673
+Patch0:		aria2-1.8.1-segfault-on-404.patch
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel gnutls-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
@@ -20,6 +22,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q -n%{name}-%{version}
+%patch0 -p0 -b .segfault
 
 %build
 %configure2_5x --with-ca-bundle="/etc/pki/tls/cert.pem"
