@@ -1,7 +1,7 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
 Version: 	1.8.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.xz
@@ -9,6 +9,8 @@ URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel gnutls-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
 Requires:	rootcerts
+#we need 1.7.0 to have ares_library_init available
+Requires:	c-ares >= 1.7.0
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 
 %description
