@@ -22,7 +22,7 @@ This engine is implemented with a single-thread model.
 It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
-%setup -q -n%{name}-%{version}
+%setup -q
 %patch0 -p1 -b .encoding~
 
 %build
