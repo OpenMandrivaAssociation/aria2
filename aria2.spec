@@ -33,9 +33,6 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 rm -rf %{buildroot}
 %makeinstall_std
 
-rm -f %{buildroot}%{_datadir}/locale/locale.alias
-rm -fr %{buildroot}%{_datadir}/doc
-
 %find_lang aria2
 
 %check
@@ -46,6 +43,7 @@ rm -rf %{buildroot}
 
 %files -f aria2.lang
 %defattr(-, root, root)
-%doc ChangeLog README* *.html
+%doc ChangeLog
+%doc %{_docdir}/%{name}/*
 %{_bindir}/*
 %{_mandir}/man1/*
