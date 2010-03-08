@@ -5,6 +5,7 @@ Release:	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.xz
+Patch0:		aria2-1.8.3-optional-content-encoding-disabled-by-default.spec
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel gnutls-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
@@ -22,6 +23,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q -n%{name}-%{version}
+%patch0 -p1 -b .encoding~
 
 %build
 %configure2_5x --with-ca-bundle="/etc/pki/tls/cert.pem"
