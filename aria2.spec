@@ -5,7 +5,7 @@ Release:	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.xz
-Patch0:		aria2-1.9.0-optional-content-encoding-disabled-by-default.spec
+Patch0:		aria2-1.9.0-optional-content-encoding-disabled-by-default.patch
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel gnutls-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
