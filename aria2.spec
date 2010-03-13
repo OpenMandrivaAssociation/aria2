@@ -1,11 +1,11 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	1.8.3
-Release:	%mkrel 2
+Version: 	1.9.0
+Release:	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.xz
-Patch0:		aria2-1.8.3-optional-content-encoding-disabled-by-default.spec
+Patch0:		aria2-1.9.0-optional-content-encoding-disabled-by-default.spec
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel gnutls-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
