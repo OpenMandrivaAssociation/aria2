@@ -1,11 +1,12 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
 Version: 	1.9.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.xz
 Patch0:		aria2-1.9.0-optional-content-encoding-disabled-by-default.patch
+Patch1:		aria2-1.9.0-CVE-2010-1512.diff
 URL: 		http://aria2.sourceforge.net/
 Buildrequires:  libxml2-devel gnutls-devel c-ares-devel
 BuildRequires:	sqlite3-devel cppunit-devel
@@ -24,6 +25,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 %prep
 %setup -q
 %patch0 -p1 -b .encoding~
+%patch1 -p1 -b .cve~
 
 %build
 CFLAGS="$RPM_OPT_FLAGS -Os" \
