@@ -25,7 +25,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 %prep
 %setup -q
 %patch0 -p1 -b .encoding~
-%patch1 -p1 -b .cve~
+%patch1 -p1 -b .CVE-2010-1512
 
 %build
 CFLAGS="$RPM_OPT_FLAGS -Os" \
