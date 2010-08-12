@@ -13,6 +13,7 @@ BuildRequires:	sqlite3-devel cppunit-devel
 Requires:	rootcerts
 #we need 1.7.0 to have ares_library_init available
 Requires:	c-ares >= 1.7.0
+Provides:	webfetch
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 
 %description
