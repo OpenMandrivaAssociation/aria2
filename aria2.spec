@@ -1,7 +1,7 @@
 Summary: 	Download utility with resuming and segmented downloading
 Name: 		aria2
-Version: 	1.10.0
-Release:	%mkrel 2
+Version: 	1.10.1
+Release:	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/File transfer
 Source0: 	http://downloads.sourceforge.net/aria2/%name-%{version}.tar.xz
