@@ -1,7 +1,7 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
 Version:	1.11.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Networking/File transfer
 URL:		http://aria2.sourceforge.net/
@@ -16,6 +16,9 @@ Requires:	rootcerts
 #we need 1.7.0 to have ares_library_init available
 Requires:	c-ares >= 1.7.0
 Provides:	webfetch
+# aria2 uses functions not available in older zlib versions, so add a conflict
+# to avoid any possible issues caused by this during upgrades
+Conflicts:	zlib1 < 1.2.5
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
