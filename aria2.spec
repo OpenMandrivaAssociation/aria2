@@ -70,6 +70,6 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-, root, root)
 %doc AUTHORS README NEWS
-%doc %{_docdir}/%{name}/*
 %{_bindir}/*
 %{_mandir}/man1/*
+%{_mandir}/ru/man1/aria2c.1.*
