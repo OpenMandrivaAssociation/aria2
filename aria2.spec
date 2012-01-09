@@ -1,6 +1,6 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
-Version:	1.13.0
+Version:	1.14.0
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Networking/File transfer
@@ -12,6 +12,7 @@ BuildRequires:	gnutls-devel
 BuildRequires:	c-ares-devel
 BuildRequires:	sqlite3-devel
 BuildRequires:	cppunit-devel
+BuildRequires:	libgcrypt-devel
 Requires:	rootcerts
 #we need 1.7.0 to have ares_library_init available
 Requires:	c-ares >= 1.7.0
