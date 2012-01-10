@@ -6,6 +6,7 @@ License:	GPLv2+
 Group:		Networking/File transfer
 URL:		http://aria2.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/aria2/stable/%{name}-%{version}/%{name}-%{version}.tar.xz
+Patch0:		aria2-1.14.0-flush-output-after-printing-progress.patch
 BuildRequires:	bison
 Buildrequires:	libxml2-devel
 BuildRequires:	gnutls-devel
@@ -31,6 +32,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q
+%patch0 -p1 -b .flush~
 
 %build
 export CFLAGS="%{optflags} -Os"
