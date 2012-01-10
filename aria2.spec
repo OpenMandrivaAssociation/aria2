@@ -1,7 +1,7 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
 Version:	1.14.0
-Release:	%mkrel 1
+Release:	2
 License:	GPLv2+
 Group:		Networking/File transfer
 URL:		http://aria2.sourceforge.net/
@@ -21,7 +21,6 @@ Provides:	webfetch
 # aria2 uses functions not available in older zlib versions, so add a conflict
 # to avoid any possible issues caused by this during upgrades
 Conflicts:	zlib1 < 1.2.5
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Aria2 has segmented downloading engine in its core. It can download one 
@@ -62,16 +61,11 @@ make check
 %endif
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang %{name}
 
-%clean
-rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(-, root, root)
 %doc AUTHORS README NEWS
 %{_bindir}/*
 %{_mandir}/man1/*
