@@ -1,7 +1,7 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
 Version:	1.14.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Networking/File transfer
 URL:		http://aria2.sourceforge.net/
@@ -9,7 +9,7 @@ Source0:	http://downloads.sourceforge.net/project/aria2/stable/%{name}-%{version
 Patch0:		aria2-1.14.0-flush-output-after-printing-progress.patch
 BuildRequires:	bison
 Buildrequires:	libxml2-devel
-BuildRequires:	gnutls-devel
+BuildRequires:	gnutls-devel >= 3.0
 BuildRequires:	c-ares-devel
 BuildRequires:	sqlite3-devel
 BuildRequires:	cppunit-devel
