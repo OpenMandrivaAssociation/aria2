@@ -1,7 +1,7 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
 Version:	1.15.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Networking/File transfer
 URL:		http://aria2.sourceforge.net/
