@@ -11,7 +11,7 @@ BuildRequires:	bison
 Buildrequires:	libxml2-devel
 BuildRequires:	gnutls-devel >= 3.0
 BuildRequires:	c-ares-devel
-BuildRequires:	sqlite3-devel
+BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	cppunit-devel
 BuildRequires:	libgcrypt-devel
 Requires:	rootcerts
