@@ -4,16 +4,17 @@ Version:	1.16.3
 Release:	1
 License:	GPLv2+
 Group:		Networking/File transfer
-URL:		http://aria2.sourceforge.net/
+Url:		http://aria2.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/aria2/stable/%{name}-%{version}/%{name}-%{version}.tar.xz
-#Patch0:		aria2-1.14.0-flush-output-after-printing-progress.patch
+
+
 BuildRequires:	bison
-Buildrequires:	libxml2-devel
-BuildRequires:	gnutls-devel >= 3.0
-BuildRequires:	c-ares-devel
+BuildRequires:	pkgconfig(cppunit)
+BuildRequires:	pkgconfig(gnutls)
+BuildRequires:	pkgconfig(libcares)
+BuildRequires:	pkgconfig(libgcrypt)
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sqlite3)
-BuildRequires:	cppunit-devel
-BuildRequires:	libgcrypt-devel
 Requires:	rootcerts
 #we need 1.7.0 to have ares_library_init available
 Requires:	c-ares >= 1.7.0
@@ -31,7 +32,6 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q
-#patch0 -p1 -b .flush~
 
 %build
 export CFLAGS="%{optflags} -Os"
@@ -70,3 +70,4 @@ make check
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_mandir}/ru/man1/aria2c.1.*
+
