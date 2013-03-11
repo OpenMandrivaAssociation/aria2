@@ -1,7 +1,7 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
 Version:	1.16.3
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
@@ -16,12 +16,7 @@ BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sqlite3)
 Requires:	rootcerts
-#we need 1.7.0 to have ares_library_init available
-Requires:	c-ares >= 1.7.0
 Provides:	webfetch
-# aria2 uses functions not available in older zlib versions, so add a conflict
-# to avoid any possible issues caused by this during upgrades
-Conflicts:	zlib1 < 1.2.5
 
 %description
 Aria2 has segmented downloading engine in its core. It can download one 
