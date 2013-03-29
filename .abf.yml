@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   aria2-1.16.3.tar.xz: d378dba5b57bf324e4eca0835f615b41aa9b2d79
+sources:
+  aria2-1.16.5.tar.xz: d5e078bece19c8048e8358ffca328cbc034d4ec3
