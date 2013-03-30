@@ -65,4 +65,5 @@ make check
 %{_bindir}/*
 %{_mandir}/man1/*
 %{_mandir}/ru/man1/aria2c.1.*
+%{_mandir}/pt/man1/aria2c.1.*
 
