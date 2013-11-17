@@ -1,11 +1,11 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
-Version:	1.18.0
+Version:	1.18.1
 Release:	1
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/project/aria2/stable/%{name}-%{version}/%{name}-%{version}.tar.xz
+Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
 
 
 BuildRequires:	bison
@@ -66,4 +66,5 @@ make check
 %{_mandir}/man1/*
 %{_mandir}/ru/man1/aria2c.1.*
 %{_mandir}/pt/man1/aria2c.1.*
+
 
