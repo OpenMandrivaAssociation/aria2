@@ -1,6 +1,6 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
-Version:	1.18.3
+Version:	1.18.5
 Release:	1
 License:	GPLv2+
 Group:		Networking/File transfer
@@ -66,6 +66,4 @@ make check
 %{_mandir}/man1/*
 %{_mandir}/ru/man1/aria2c.1.*
 %{_mandir}/pt/man1/aria2c.1.*
-
-
 
