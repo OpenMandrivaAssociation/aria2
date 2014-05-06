@@ -58,12 +58,9 @@ make check
 %install
 %makeinstall_std
 
-%find_lang %{name}
+%find_lang %{name} --all-name --with-man
 
 %files -f %{name}.lang
 %doc AUTHORS README NEWS
 %{_bindir}/*
 %{_mandir}/man1/*
-%{_mandir}/ru/man1/aria2c.1.*
-%{_mandir}/pt/man1/aria2c.1.*
-
