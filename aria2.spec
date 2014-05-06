@@ -14,6 +14,7 @@ BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libcares)
 BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libuv)
 BuildRequires:	pkgconfig(sqlite3)
 Requires:	rootcerts
 Provides:	webfetch
@@ -37,8 +38,8 @@ export CXXFLAGS="$CFLAGS"
 	--enable-bittorrent \
 	--enable-metalink \
 	--enable-epoll \
+	--with-libuv \
 	--enable-threads=posix \
-	--disable-rpath \
 	--with-gnutls \
 	--without-openssl \
 	--with-sqlite3 \
