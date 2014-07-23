@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   aria2-1.18.5.tar.xz: 487074312a40e69a680b0eb183a38093d40f6b83
+sources:
+  aria2-1.18.6.tar.xz: c14f57acbe5ef66a7b335ee9ea75e3890c2dc6f0
