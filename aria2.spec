@@ -1,11 +1,11 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
-Version:	1.17.1
-Release:	7
+Version:	1.18.10
+Release:	0.1
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/project/aria2/stable/%{name}-%{version}/%{name}-%{version}.tar.xz
+Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
 
 
 BuildRequires:	bison
@@ -14,6 +14,7 @@ BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libcares)
 BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libuv)
 BuildRequires:	pkgconfig(sqlite3)
 Requires:	rootcerts
 Provides:	webfetch
@@ -29,16 +30,14 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 %setup -q
 
 %build
-export CFLAGS="%{optflags} -Os"
-export CXXFLAGS="$CFLAGS"
 
 %configure2_5x \
 	--with-ca-bundle="%{_sysconfdir}/pki/tls/cert.pem" \
 	--enable-bittorrent \
 	--enable-metalink \
 	--enable-epoll \
+	--with-libuv \
 	--enable-threads=posix \
-	--disable-rpath \
 	--with-gnutls \
 	--without-openssl \
 	--with-sqlite3 \
@@ -58,12 +57,9 @@ make check
 %install
 %makeinstall_std
 
-%find_lang %{name}
+%find_lang %{name} --all-name --with-man
 
 %files -f %{name}.lang
 %doc AUTHORS README NEWS
 %{_bindir}/*
 %{_mandir}/man1/*
-%{_mandir}/ru/man1/aria2c.1.*
-%{_mandir}/pt/man1/aria2c.1.*
-
