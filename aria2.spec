@@ -6,7 +6,8 @@ License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
-
+# (tpg) upstream bug https://github.com/tatsuhiro-t/aria2/issues/346
+Patch0:		aria2-1.18.10-Fix-getrandom-interface-detection.patch
 
 BuildRequires:	bison
 BuildRequires:	pkgconfig(cppunit)
@@ -28,9 +29,9 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
-
 %configure2_5x \
 	--with-ca-bundle="%{_sysconfdir}/pki/tls/cert.pem" \
 	--enable-bittorrent \

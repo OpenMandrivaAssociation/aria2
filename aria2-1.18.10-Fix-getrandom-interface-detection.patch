@@ -1,0 +1,16 @@
+diff -Naur aria2-1.18.10/configure.ac aria2-1.18.10.tpg/configure.ac
+--- aria2-1.18.10/configure.ac	2015-02-23 14:34:01.000000000 +0000
++++ aria2-1.18.10.tpg/configure.ac	2015-03-06 18:17:43.472240525 +0000
+@@ -758,10 +758,12 @@
+ 
+ AC_MSG_CHECKING([for getrandom linux syscall interface])
+ AC_LINK_IFELSE([AC_LANG_PROGRAM([[
++#include <sys/syscall.h>
+ #include <linux/random.h>
+ ]],
+ [[
+ int x = GRND_NONBLOCK;
++int y = (int)SYS_getrandom;
+ ]])],
+   [have_getrandom_interface=yes
+    AC_DEFINE([HAVE_GETRANDOM_INTERFACE], [1], [Define to 1 if getrandom linux syscall interface is available.])],
