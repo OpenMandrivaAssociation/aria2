@@ -31,6 +31,9 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 %setup -q
 %apply_patches
 
+# (tpg) needed for patch 0
+autoreconf -fiv
+
 %build
 %configure2_5x \
 	--with-ca-bundle="%{_sysconfdir}/pki/tls/cert.pem" \
