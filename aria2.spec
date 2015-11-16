@@ -1,13 +1,11 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
-Version:	1.18.10
+Version:	1.19.2
 Release:	0.1
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
-# (tpg) upstream bug https://github.com/tatsuhiro-t/aria2/issues/346
-Patch0:		aria2-1.18.10-Fix-getrandom-interface-detection.patch
 
 BuildRequires:	bison
 BuildRequires:	pkgconfig(cppunit)
