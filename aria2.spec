@@ -6,8 +6,6 @@ License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
-
-
 BuildRequires:	bison
 BuildRequires:	pkgconfig(cppunit)
 BuildRequires:	pkgconfig(gnutls)
@@ -28,9 +26,9 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
-
 %configure \
 	--with-ca-bundle="%{_sysconfdir}/pki/tls/cert.pem" \
 	--enable-bittorrent \
