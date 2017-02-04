@@ -1,12 +1,11 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
-Version:	1.24.0
-Release:	0.1
+Version:	1.31.0
+Release:	1
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
-
 BuildRequires:	bison
 BuildRequires:	pkgconfig(cppunit)
 BuildRequires:	pkgconfig(gnutls)
@@ -29,11 +28,8 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 %setup -q
 %apply_patches
 
-# (tpg) needed for patch 0
-autoreconf -fiv
-
 %build
-%configure2_5x \
+%configure \
 	--with-ca-bundle="%{_sysconfdir}/pki/tls/cert.pem" \
 	--enable-bittorrent \
 	--enable-metalink \
