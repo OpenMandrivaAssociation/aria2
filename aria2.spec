@@ -7,6 +7,8 @@ Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
 BuildRequires:	bison
+BuildRequires:	gmp-devel
+BuildRequires:	pkgconfig(libssh2)
 BuildRequires:	pkgconfig(cppunit)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libcares)
