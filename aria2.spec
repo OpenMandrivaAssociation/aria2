@@ -1,7 +1,7 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
 Version:	1.33.1
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
@@ -14,6 +14,7 @@ BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(expat)
 BuildRequires:	pkgconfig(libuv)
 BuildRequires:	pkgconfig(sqlite3)
+BuildRequires:	pkgconfig(zlib)
 Requires:	rootcerts
 Provides:	webfetch
 
