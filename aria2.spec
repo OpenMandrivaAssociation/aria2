@@ -62,6 +62,6 @@ make check
 %find_lang %{name} --all-name --with-man
 
 %files -f %{name}.lang
-%doc AUTHORS README NEWS
+%doc %{_docdir}/%{name}
 %{_bindir}/*
 %{_mandir}/man1/*
