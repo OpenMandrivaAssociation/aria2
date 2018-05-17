@@ -1,7 +1,7 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
-Version:	1.33.1
-Release:	2
+Version:	1.34.0
+Release:	1
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
@@ -30,7 +30,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %configure \
@@ -48,7 +48,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 	--with-libcares \
 	--with-libz
 
-%make
+%make_build
 
 # (tpg) disable checks on x86, on x86_64 all of them passes without any failures
 %ifnarch %{ix86}
@@ -57,7 +57,7 @@ make check
 %endif
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} --all-name --with-man
 
