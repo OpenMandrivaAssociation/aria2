@@ -30,7 +30,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 
 %prep
 %setup -q
-%autopatch -p1
+%apply_patches
 
 %build
 %configure \
@@ -48,7 +48,7 @@ It can also download BitTorrent files and supports Metalink version 3.0.
 	--with-libcares \
 	--with-libz
 
-%make_build
+%make
 
 # (tpg) disable checks on x86, on x86_64 all of them passes without any failures
 %ifnarch %{ix86}
@@ -57,7 +57,7 @@ make check
 %endif
 
 %install
-%make_install
+%makeinstall_std
 
 %find_lang %{name} --all-name --with-man
 
