@@ -1,7 +1,7 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
 Version:	1.34.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
@@ -27,6 +27,14 @@ file from multiple URLs or multiple connections from one URL. This results
 in very high speed downloading, very much faster than ordinary browsers.
 This engine is implemented with a single-thread model.
 It can also download BitTorrent files and supports Metalink version 3.0.
+
+%package doc
+Summary:	Documentation for %{name}
+Group:		Networking/File transfer
+BuildArch:	noarch
+
+%description doc
+This package contains the documentation for %{name}.
 
 %prep
 %setup -q
@@ -62,6 +70,8 @@ make check
 %find_lang %{name} --all-name --with-man
 
 %files -f %{name}.lang
-%doc %{_docdir}/%{name}
 %{_bindir}/*
 %{_mandir}/man1/*
+
+%files doc
+%doc %{_docdir}/%{name}
