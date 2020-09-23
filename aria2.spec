@@ -48,7 +48,7 @@ This package contains the documentation for %{name}.
 	--enable-threads=posix \
 	--with-gnutls \
 	--without-openssl \
-	--without-nettle \
+	--without-libnettle \
 	--with-sqlite3 \
 	--without-libxml2 \
 	--with-libexpat \
