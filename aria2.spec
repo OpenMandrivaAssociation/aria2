@@ -1,19 +1,18 @@
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
 Version:	1.35.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
 BuildRequires:	bison
-BuildRequires:	gmp-devel
+BuildRequires:	pkgconfig(gmp)
 BuildRequires:	pkgconfig(libnsl)
 BuildRequires:	pkgconfig(libssh2)
 BuildRequires:	pkgconfig(cppunit)
 BuildRequires:	pkgconfig(gnutls)
 BuildRequires:	pkgconfig(libcares)
-BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(expat)
 BuildRequires:	pkgconfig(libuv)
 BuildRequires:	pkgconfig(sqlite3)
@@ -37,8 +36,7 @@ BuildArch:	noarch
 This package contains the documentation for %{name}.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %configure \
@@ -50,6 +48,7 @@ This package contains the documentation for %{name}.
 	--enable-threads=posix \
 	--with-gnutls \
 	--without-openssl \
+	--without-nettle \
 	--with-sqlite3 \
 	--without-libxml2 \
 	--with-libexpat \
