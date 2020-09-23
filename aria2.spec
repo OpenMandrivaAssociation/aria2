@@ -12,6 +12,7 @@ BuildRequires:	pkgconfig(libnsl)
 BuildRequires:	pkgconfig(libssh2)
 BuildRequires:	pkgconfig(cppunit)
 BuildRequires:	pkgconfig(gnutls)
+BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(libcares)
 BuildRequires:	pkgconfig(expat)
 BuildRequires:	pkgconfig(libuv)
@@ -49,6 +50,7 @@ This package contains the documentation for %{name}.
 	--with-gnutls \
 	--without-openssl \
 	--without-libnettle \
+	--with-libgcrypt \
 	--with-sqlite3 \
 	--without-libxml2 \
 	--with-libexpat \
