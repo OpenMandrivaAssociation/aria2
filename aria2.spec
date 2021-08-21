@@ -1,11 +1,14 @@
+# (tpg) optimize it a bit
+%global optflags %{optflags} -Oz --rtlib=compiler-rt
+
 Summary:	Download utility with resuming and segmented downloading
 Name:		aria2
-Version:	1.35.0
+Version:	1.36.0
 Release:	3
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://aria2.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/aria2/%{name}-%{version}.tar.xz
+Source0:	https://github.com/aria2/aria2/releases/download/release-%{version}/aria2-%{version}.tar.xz
 BuildRequires:	bison
 BuildRequires:	pkgconfig(gmp)
 BuildRequires:	pkgconfig(libnsl)
@@ -59,12 +62,6 @@ This package contains the documentation for %{name}.
 
 %make_build
 
-# (tpg) disable checks on x86, on x86_64 all of them passes without any failures
-%ifnarch %{ix86}
-%check
-make check
-%endif
-
 %install
 %make_install
 
@@ -72,7 +69,7 @@ make check
 
 %files -f %{name}.lang
 %{_bindir}/*
-%{_mandir}/man1/*
+%doc %{_mandir}/man1/*
 
 %files doc
 %doc %{_docdir}/%{name}
