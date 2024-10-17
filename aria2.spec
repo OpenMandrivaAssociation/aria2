@@ -7,7 +7,7 @@ Version:	1.37.0
 Release:	1
 License:	GPLv2+
 Group:		Networking/File transfer
-Url:		http://aria2.sourceforge.net/
+Url:		https://aria2.sourceforge.net/
 Source0:	https://github.com/aria2/aria2/releases/download/release-%{version}/aria2-%{version}.tar.xz
 BuildRequires:	bison
 BuildRequires:	pkgconfig(gmp)
