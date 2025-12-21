@@ -9,6 +9,11 @@ License:	GPLv2+
 Group:		Networking/File transfer
 Url:		https://aria2.sourceforge.net/
 Source0:	https://github.com/aria2/aria2/releases/download/release-%{version}/aria2-%{version}.tar.xz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	bison
 BuildRequires:	pkgconfig(gmp)
 BuildRequires:	pkgconfig(libnsl)
